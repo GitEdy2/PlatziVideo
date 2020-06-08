@@ -9,7 +9,7 @@ module.exports = {
     },
 
     resolve: {
-        extension: ['.js', '.jsx']
+        extensions: ['.js', '.jsx']
     },
 
     module: {
@@ -24,13 +24,9 @@ module.exports = {
 
             {
                 test: /\.html$/,
-                use: [
-                    {
-                        loader: 'html-loader'
-                    }
-                ]
-            }
-        ]
+                loader: 'html-loader',
+            },
+        ],
     },
 
     plugins: [
@@ -38,5 +34,5 @@ module.exports = {
             template: './public/index.html',
             filename: './index.html'
         }),
-    ]
+    ],
 };
