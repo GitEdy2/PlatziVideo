@@ -4,10 +4,11 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack --mode production"
   },
   "keywords": [],
-  "author": "",
+  "author": "Edison Proaño",
   "license": "ISC",
   "dependencies": {
     "react": "^16.13.1",
