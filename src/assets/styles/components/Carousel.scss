@@ -10,3 +10,12 @@
     margin: 70px 0px;
     padding-bottom: 10px;
 }
+
+.carousel__container:hover .carousel-item {
+    opacity: 0.3;
+}
+
+.carousel__container:hover .carousel-item:hover {
+    transform: scale(1.5);
+    opacity: 1;
+}
