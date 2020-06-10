@@ -1,8 +1,8 @@
 import React from 'react'
 
 const Carousel = ({ children }) => (
-    <section class="carousel">
-        <div class="carousel__container">
+    <section className="carousel">
+        <div className="carousel__container">
             {children}
         </div>
     </section>
