@@ -8,10 +8,10 @@ const Register = () => (
                 <h2>Regístrate</h2>
 
                 <form class="register__container--form">
-                    <input class="input" type="text" placeholder="Nombre"/>
-                    <input class="input" type="text" placeholder="Correo"/>
-                    <input class="input" type="password" placeholder="Contrasenia"/>
-                    <button class="button">Registrarme</button>       
+                    <input class="register__container--input" type="text" placeholder="Nombre"/>
+                    <input class="register__container--input" type="text" placeholder="Correo"/>
+                    <input class="register__container--input" type="password" placeholder="Contrasenia"/>
+                    <button class="register__container--button">Registrarme</button>       
 
                 </form>
 

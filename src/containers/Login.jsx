@@ -9,9 +9,9 @@ const Login = () => (
     <section className="login__container">
         <h2>Inicia sesión</h2>
         <form className="login__container--form">
-            <input className="input" type="text" placeholder="Correo"/>
-            <input className="input" type="password" placeholder="Contraseña"/>
-            <button className="button">Iniciar sesión</button>
+            <input className="login__container--input" type="text" placeholder="Correo"/>
+            <input className="login__container--input" type="password" placeholder="Contraseña"/>
+            <button className="login__container--button">Iniciar sesión</button>
             <div className="login__container--remember-me">
                 <label>
                     <input type="checkbox" id="cbox1" value="first_checkbox"/>Recuérdame
