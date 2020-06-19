@@ -11,7 +11,7 @@ const Register = () => (
                 <form class="register__container--form">
                     <input class="register__container--input" type="text" placeholder="Nombre"/>
                     <input class="register__container--input" type="text" placeholder="Correo"/>
-                    <input class="register__container--input" type="password" placeholder="Contrasenia"/>
+                    <input class="register__container--input" type="password" placeholder="Password"/>
                     <button class="register__container--button">Registrarme</button>       
 
                 </form>
