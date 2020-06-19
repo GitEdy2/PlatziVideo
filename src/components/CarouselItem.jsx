@@ -10,11 +10,11 @@ import { prototype } from 'file-loader';
 
 const CarouselItem = (props) => {
     
-    const { id, cover, title, year, contentRating, duration } = props;
+    const { id, cover, title, year, contentRating, duration, isList } = props;
 
     const handleSetFavorite = () => {
         props.setFavorite ({
-                id, cover, title, year, contentRating, duration, isList
+                id, cover, title, year, contentRating, duration
             })
     }
 
@@ -33,17 +33,21 @@ const CarouselItem = (props) => {
 
                     {
                         isList ?
-                            <img className="carousel-item__details_icons" 
-                            src={removeIcon} 
-                            alt="remove" 
-                            onClick={() => handleDeleteFavorite(id)}/>
+                            (
+                                <img className="carousel-item__details_icons" 
+                                src={removeIcon} 
+                                alt="remove" 
+                                onClick={() => handleDeleteFavorite(id)}/>
+                            )
                             :
-                            <img className="carousel-item__details_icons" 
-                            src={plusIcon} 
-                            alt="plus" 
-                            onClick={handleSetFavorite}/>
+                            (
+                                <img className="carousel-item__details_icons" 
+                                src={plusIcon} 
+                                alt="plus" 
+                                onClick={handleSetFavorite}/>
+                            )
                     }
-                    
+
                 </div>                  
             </div>
         <p className="carousel-item__details--title">{title}</p>
