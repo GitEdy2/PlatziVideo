@@ -23,6 +23,12 @@ const reducer = (state, action) => {
                 originals: state.originals.filter(item => item.id !== action.payload.id)
             };
 
+        case 'LOGIN_REQUEST':
+            return {
+                ...state,
+                user: action.payload,
+            }
+
         default:
             return state;
     }
