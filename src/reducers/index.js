@@ -7,6 +7,8 @@ const reducer = (state, action) => {
                 return {
                     ...state,
                     myList: [...state.myList, action.payload],
+                    trends: state.trends.filter(item => item.id !== action.payload.id),
+                    originals: state.originals.filter(item => item.id !== action.payload.id),
                 };
             } else {
                 return {
