@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 // 2. Importar las acciones a ejecutar en el store a través de este componente
 import { registerRequest } from '../actions';
 import {Link} from 'react-router-dom';
+import Header from '../components/Header';
 import '../assets/styles/components/Register.scss';
 
 // 5. El componente ejecuta acciones contra el store, por tanto activo sus props
@@ -34,49 +35,51 @@ const Register = props => {
     }
 
     return (
-    <section className="register">
-            <section className="register__container">
+    <>
+        <Header isRegister />
+        <section className="register">
+                <section className="register__container">
 
-                <h2>Regístrate</h2>
+                    <h2>Regístrate</h2>
 
-                <form className="register__container--form" onSubmit={handleSubmit}>
-                    <input
-                        name="name" 
-                        className="register__container--input" 
-                        type="text" 
-                        placeholder="Nombre"
-                        onChange={handleInput}
-                    />
+                    <form className="register__container--form" onSubmit={handleSubmit}>
+                        <input
+                            name="name" 
+                            className="register__container--input" 
+                            type="text" 
+                            placeholder="Nombre"
+                            onChange={handleInput}
+                        />
 
-                    <input
-                        name="email" 
-                        className="register__container--input" 
-                        type="text" 
-                        placeholder="Email"
-                        onChange={handleInput}
-                    />
+                        <input
+                            name="email" 
+                            className="register__container--input" 
+                            type="text" 
+                            placeholder="Email"
+                            onChange={handleInput}
+                        />
 
-                    <input
-                        name="password" 
-                        className="register__container--input" 
-                        type="password" 
-                        placeholder="Password"
-                        onChange={handleInput}
-                    />
+                        <input
+                            name="password" 
+                            className="register__container--input" 
+                            type="password" 
+                            placeholder="Password"
+                            onChange={handleInput}
+                        />
 
-                    <button className="register__container--button">Registrarme</button>       
+                        <button className="register__container--button">Registrarme</button>       
 
-                </form>
+                    </form>
 
-                <div className="register__container--inicio-sesion">
-                    <Link to="/login">
-                        Iniciar Sesion
-                    </Link>
-                </div>
+                    <div className="register__container--inicio-sesion">
+                        <Link to="/login">
+                            Iniciar Sesion
+                        </Link>
+                    </div>
 
-            </section>
-
-    </section>
+                </section>
+        </section>
+    </>
     )
 };
 
