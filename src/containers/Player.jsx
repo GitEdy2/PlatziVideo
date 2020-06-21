@@ -1,9 +1,12 @@
 import React from 'react';
-
+import { connect } from 'react-redux';
 
 import '../assets/styles/components/Player.scss';
 
 const Player = props => {
+
+    const {id} = props.match.params;
+
     return (
         <div className="Player">
             <video controls autoPlay>
@@ -18,4 +21,4 @@ const Player = props => {
     );
 };
 
-export default Player;
+export default connect(null, null)(Player);
