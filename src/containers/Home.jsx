@@ -1,19 +1,33 @@
-import React, {useState, useEffect} from 'react';
+import React from 'react';
 import {connect} from 'react-redux';
 import Header from '../components/Header';
 import Search from '../components/Search';
 import Categories from '../components/Categories';
 import Carousel from '../components/Carousel';
 import CarouselItem from '../components/CarouselItem';
-import useInitialState from '../hooks/useInitialState';
+//import useInitialState from '../hooks/useInitialState';
 import '../assets/styles/App.scss';
 
-const Home = ({ myList, trends, originals }) => {
+const Home = ({ myList, trends, originals, searchResult }) => {
 
     return (
         <>
             <Header />          
             <Search isHome />
+
+            {searchResult.length > 0 &&
+                <Categories title="Resultados de la busqueda...">
+                    <Carousel>
+                        {searchResult.map(item =>
+                            <CarouselItem 
+                            key={item.title} 
+                            {...item}
+                            isList
+                            />
+                        )}
+                    </Carousel>
+                </Categories>
+            }
 
             {myList.length > 0 &&
                 <Categories title="Mi lista">
@@ -53,6 +67,7 @@ const mapStateToProps = state => {
         myList: state.myList,
         trends: state.trends,
         originals: state.originals,
+        searchResult: state.searchResult,
     };
 };
 
