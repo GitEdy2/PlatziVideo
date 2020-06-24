@@ -46,6 +46,7 @@ const reducer = (state, action) => {
                 ...state,
                 playing: state.trends.find(item => item.id === Number(action.payload)) 
                 || state.original.find(item => item.id === Number(action.payload))
+                || state.myList.find(item => item.id === Number(action.payload))
                 || []
             }
 
