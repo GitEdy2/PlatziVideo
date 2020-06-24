@@ -50,12 +50,17 @@ const reducer = (state, action) => {
             }
 
         case 'GET_VIDEO_SEARCH':
+            
+            if(action.payload === "") return { ...state, searchResult: []};
+
+            const listas = [...state.trends, ...state.originals];
+
             return {
                 ...state,
-                searchResult: state.trends.filter((item) => item.title.toLowerCase().search(action.payload.toLowerCase()) !== -1) ||
-                state.originals.filter((item) => item.title.toLowerCase().search(action.payload.toLowerCase()) !== -1) || [],
-            }
-
+                searchResult: listas.filter(item => item.title.toLowerCase().includes(action.payload.toLowerCase()))
+            };
+            
+        
         default:
             return state;
     }
