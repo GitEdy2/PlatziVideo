@@ -20,7 +20,8 @@ const reducer = (state, action) => {
             return {
                 ...state,
                 myList: state.myList.filter(items => items.id !== action.payload),
-                originals: state.originals.filter(item => item.id !== action.payload.id)
+                originals: state.originals.filter(item => item.id !== action.payload.id),
+                trends: state.trends.filter(item => item.id !== action.payload.id),
             };
 
         case 'LOGIN_REQUEST':
