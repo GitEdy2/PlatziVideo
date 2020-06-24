@@ -2,26 +2,19 @@ import React from 'react';
 import classNames from 'classnames';
 import { getVideoSearch } from '../actions';
 import { connect } from 'react-redux';
-import PropTypes from 'prop-types';
-import Categories from './Categories';
-import Carousel from './Carousel';
-import CarouselItem from './CarouselItem';
 import '../assets/styles/components/Search.scss';
 
 
 const Search = (props) => {
 
-    const { isHome } = props;
+    const { isHome, getVideoSearch } = props;
 
     const inputStyle = classNames('input', {
         isHome
     });
 
-    const handleEnter = (event) => {
-        if (event.key === 'Enter') {
-            props.getVideoSearch(event.target.value);
-        }
-        
+    const handleInput = (event) => {
+        getVideoSearch(event.target.value);       
     }
 
     return (
@@ -32,7 +25,7 @@ const Search = (props) => {
                 className={inputStyle} 
                 type="text" 
                 placeholder="Buscar..."
-                onKeyUp={handleEnter}
+                onKeyUp={handleInput}
             />
 
         </section>
@@ -48,9 +41,6 @@ const mapStateToProps = state => {
 const mapDispatchToProps = {
     getVideoSearch,
 }
-
-
-
 
 
 export default connect(mapStateToProps, mapDispatchToProps)(Search);
